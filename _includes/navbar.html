@@ -4,9 +4,17 @@
             {% if page.id == "index" %}
             <a class="active">
             {% else %}
-            <a href="{{ '/' | relative_url }}">
+            <a href="/">
             {% endif %}
             Home</a>
+        </li>
+        <li>
+            {% if page.id == "contact" %}
+            <a class="active">
+            {% else %}
+            <a href="/contact">
+            {% endif %}
+            Contact</a>
         </li>
     </ul>
 </nav>

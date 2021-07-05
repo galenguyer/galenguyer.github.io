@@ -4,9 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    {% if page.additional_styles %}
-      {% for style in page.additional_styles%}
+    {% if page.styles %}
+      {% for style in page.styles%}
         <link rel="stylesheet" href="/assets/css/{{ style }}.css">
       {% endfor %}
     {% endif %}
