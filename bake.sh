@@ -15,6 +15,10 @@ else
 	exit 1
 fi
 
+# if no registry is provided, tag image as "local" registry
+registry="${REGISTRY:-local}"
+echo "using registry $registry..."
+
 if [[ "$#" -eq 1 ]]; then
 	if [[ "$1" = "files" ]]; then
 		echo "removing ./_site"
@@ -22,4 +26,9 @@ if [[ "$#" -eq 1 ]]; then
 	fi
 fi
 
+export REGISTRY="$registry"
 docker buildx bake "$@"
+
+if [ "$registry" != "local" ]; then
+  docker push "$registry/galenguyer.com"
+fi
