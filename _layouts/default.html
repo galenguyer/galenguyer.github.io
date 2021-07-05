@@ -12,6 +12,11 @@
     {% endif %}
   </head>
   <body>
-    {{ content }}
+    <div id="container">
+      <header>
+        {% include brand.html %}
+      </header>
+      {{ content }}
+    </div>
   </body>
 </html>
