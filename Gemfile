@@ -15,7 +15,7 @@ gem "jekyll", "~> 4.2.0"
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  #gem "jekyll-feed", "~> 0.12"
   gem "jekyll-tidy", "~> 0.2.2"
   gem "jekyll-email-protect", "~> 1.1.0"
 end
