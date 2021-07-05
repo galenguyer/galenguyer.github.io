@@ -19,6 +19,10 @@ fi
 registry="${REGISTRY:-local}"
 echo "using registry $registry..."
 
+# get git revision
+git_ver="$(git rev-parse --short HEAD)"
+echo "on git revision $git_ver..."
+
 if [[ "$#" -eq 1 ]]; then
 	if [[ "$1" = "files" ]]; then
 		echo "removing ./_site"
@@ -31,4 +35,6 @@ docker buildx bake "$@"
 
 if [ "$registry" != "local" ]; then
   docker push "$registry/galenguyer.com"
+  docker tag "$registry/galenguyer.com" "$registry/galenguyer.com:$git_ver"
+  docker push "$registry/galenguyer.com:$git_ver"
 fi
