@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <ul>
+        <li>
+            {% if page.id == "index" %}
+            <a class="active">
+            {% else %}
+            <a href="{{ '/' | relative_url }}">
+            {% endif %}
+            Home</a>
+        </li>
+    </ul>
+</nav>
