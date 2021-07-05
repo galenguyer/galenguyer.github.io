@@ -9,6 +9,14 @@
             Home</a>
         </li>
         <li>
+            {% if page.id == "projects" %}
+            <a class="active">
+            {% else %}
+            <a href="/projects/">
+            {% endif %}
+            Projects</a>
+        </li>
+        <li>
             {% if page.id == "contact" %}
             <a class="active">
             {% else %}
