@@ -4,17 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
-    <style>
-      @font-face {
-        font-family: "Raleway";
-          src: url("/assets/fonts/Raleway-VariableFont_wght.ttf");
-        }
-        @font-face {
-          font-family: "Raleway";
-          src: url("/assets/fonts/Raleway-Italic-VariableFont_wght.ttf");
-          font-style: italic;
-        }
-    </style>
     {% if page.styles %}
       {% for style in page.styles%}
         <link rel="stylesheet" href="/assets/css/{{ style }}.css">
