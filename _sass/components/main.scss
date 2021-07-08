@@ -6,7 +6,7 @@ main {
     color: #fff;
     letter-spacing: 0.04em;
     line-height: 1.5em;
-    font-family:'Raleway', sans-serif;
+    font-family: $ff-sans;
     font-weight: 400;    
     h1 {
         padding-bottom: 0.25em;
@@ -26,6 +26,7 @@ main {
     }
 
     p {
+        font-size: 1.1em;
         margin: 1rem 0 1rem 0;
     }
     a {
