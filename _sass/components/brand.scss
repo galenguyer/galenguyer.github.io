@@ -5,7 +5,7 @@
     background: $backgroundColor;
     color: #FFF;
     .name {
-        margin: 2rem 0rem 1rem 0rem;
+        margin: 2rem 0rem 0.5rem 0rem;
         text-transform: uppercase;
         font-size: 3em;
         letter-spacing: 16px;
@@ -23,10 +23,16 @@
             border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
         }
     }
+    .pronouns {
+        letter-spacing: 0.07em;
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.75);
+    }
     .description {
         letter-spacing: 0.07em;
         font-size: 1.1em;
         color: rgba(255, 255, 255, 0.75);
+        padding-bottom: 0.2rem;
     }
 }
 @media screen and (max-width: 1070px) {
