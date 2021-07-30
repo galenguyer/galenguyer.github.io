@@ -1,0 +1,19 @@
+---
+layout: book
+title: "ProtonMail Email"
+id: protonmail-email
+---
+
+<p>Dear Galen Guyer,</p>
+<p>We noticed an issue with the OpenPGP key you imported into galenguyer@protonmail.com and galenguyer@pm.me. It has a large public RSA exponent (0x88D99D91 instead of the usual 0x10001) which is not supported by our gopenpgp cryptography library (used in our mobile applications) unlike OpenPGP.js (used by our web app). This unfortunately means that you haven't been able to receive emails from ProtonMail users using our mobile applications.</p>
+<p>We have also now switched from using OpenPGP.js to gopenpgp on the server side as well. This means that the server won't be able to encrypt emails for your address, which means you won't be able to receive new unencrypted external emails. To fix this, please generate and/or import a new OpenPGP key for these addresses in the web app.</p>
+<p>Apologies for the inconvenience.</p>
+<p>(You may be interested to know that yours is the only public key we found with this specific issue, which is why we're sending you this personal email, rather than developing a general fix for it. :))</p>
+<p>Best regards,</p>
+<p>
+    Daniel Huigens
+    <br>
+    Cryptography Team Lead
+    <br>
+    Proton Technologies AG
+</p>
