@@ -1,0 +1,24 @@
+---
+title: Kubernetes
+permalink: /projects/kubernetes
+layout: default
+description: This summer, I spent a lot of time learning how to set up a Kubernetes cluster and writing scripts to make that all easier. Here's what I learned
+id: kubernetes
+styles: ["main"]
+---
+
+<h1>My Summer Adventure in Kubernetes</h1>
+<h2>Overview</h2>
+<p>This summer, I decided I wanted to learn how to set up and use Kubernetes. I ended up making splitting the project into three parts. The first is a scalable <a href="https://www.terraform.io/">Terraform</a> definition that provisions as many virtual machines as I want in Azure with my SSH key and a Traffic Manager for high availability routing. The second is a collection of <a href="https://www.ansible.com/">Ansible</a> scripts to install Kubernetes on the VMs automatically. Running these two as provided will result in a kubernetes cluster running on 3 Debian 10 VMs. The final part is just a collection of scripts and notes that help me deploy what I want on my cluster, like my website and a redis-backed Flask app.</p>
+
+<h2>Terraform</h2>
+<p>My terraform definitions can be found at <a href="https://github.com/galenguyer/kubernetes-terraform-azure">github.com/galenguyer/kubernetes-terraform-azure</a>. They originally started as three terraform files, one for each virtual machine, but that scaled poorly. Adding machines meant copying files and editing them by hand, and while this wasn't exactly difficult, it left a lot of room for error. To make scaling easier, I learned how terraform can use variables and the internal count variable. Now, I can change one variable in my terraofrm.tfvars file and it'll make that many machines, handling naming them all automatically. Variables also make it easy for me to change things like how much resources each VM gets and the list of IP addresses that are allowed access to the cluster.</p>
+
+<h2>Ansible</h2>
+<p>The ansible scripts I wrote can be found at <a href="https://github.com/galenguyer/kubernetes-ansible">github.com/galenguyer/kubernetes-ansible</a>. These scripts handle all the menial parts of installing kubernetes, such as installing dependencies, setting up the master, and joining all workers. It also installs HAProxy on all the nodes so that if any node goes down, the remaining nodes can still handle traffic.</p>
+
+<h2>Ops Scripts</h2>
+<p>My ops scripts repo contains any other miscellaneous knowledge I would want to manage my cluster. While the other two repositories are more general-purpose and can be adapted for other clusters with relative ease, my ops scripts are built for myself and running them on your cluster might not work. I have scripts for installing <a href="https://cert-manager.io/">cert-manager</a> with my personal certificate (see the Root CA section below for more details). It also has resource definitions for my personal website and a small flask app I wrote that's backed by redis, which required distributed storage provided by <a href="https://longhorn.io/">Longhorn</a>.</p>
+
+<h3>Root CA</h3>
+<p>In order to not run up against LetsEncrypt rate limits, my scripts use my personal Root CA certificate for generating HTTPS certificates. I wrote <a href="https://github.com/galenguyer/hancock">hancock</a> to generate the root certificate, which you can find at <a href="https://ca.galenguyer.com">ca.galenguyer.com</a> if you want to trust me for some weird reason.</p>
