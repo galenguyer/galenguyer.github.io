@@ -24,7 +24,7 @@ git_ver="$(git rev-parse --short HEAD)"
 echo "on git revision $git_ver..."
 
 if [[ "$#" -eq 1 ]]; then
-	if [[ "$1" = "files" ]]; then
+	if [[ "$1" = "files" ]] && [[ -e ./_site ]]; then
 		echo "removing ./_site"
 		rm -r ./_site
 	fi
