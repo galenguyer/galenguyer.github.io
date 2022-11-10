@@ -1,8 +1,9 @@
-#rainbow {
+#rainbow, #rainbow>span {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     padding: 0px 1px;
+    width: 100%;
 
     .color {
         flex-grow: 1;
