@@ -8,5 +8,5 @@ RUN bundle install
 COPY . .
 RUN bundle exec jekyll build
 
-FROM cr.galenguyer.com/nginx:latest
+FROM docker.io/galenguyer/nginx
 COPY --from=builder /usr/src/app/_site/ /usr/share/nginx/html/
