@@ -7,14 +7,12 @@ group "default" {
 }
 
 target "image" {
-    dockerfile = "Dockerfile"
     tags = [
         "${REGISTRY}/galenguyer.com"
     ]
 }
 
 target "files" {
-    dockerfile = "Dockerfile.files"
-    target = "final"
+    target = "files"
     output = ["_site"]
 }
