@@ -11,6 +11,7 @@ GEM
     eventmachine (1.2.7)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
+    google-protobuf (3.23.0-x86_64-linux)
     htmlbeautifier (1.4.2)
     htmlcompressor (0.4.0)
     http_parser.rb (0.8.0)
@@ -33,8 +34,8 @@ GEM
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
     jekyll-email-protect (1.1.0)
-    jekyll-sass-converter (2.2.0)
-      sassc (> 2.0.1, < 3.0)
+    jekyll-sass-converter (3.0.0)
+      sass-embedded (~> 1.54)
     jekyll-tidy (0.2.2)
       htmlbeautifier
       htmlcompressor
@@ -59,8 +60,8 @@ GEM
     rexml (3.2.5)
     rouge (4.1.0)
     safe_yaml (1.0.5)
-    sassc (2.4.0)
-      ffi (~> 1.9)
+    sass-embedded (1.62.1-x86_64-linux-gnu)
+      google-protobuf (~> 3.21)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     unicode-display_width (2.4.2)
@@ -73,7 +74,6 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.2)
   jekyll-email-protect (~> 1.1.0)
-  jekyll-sass-converter (~> 2)
   jekyll-tidy (~> 0.2.2)
   tzinfo (>= 1, < 3)
   tzinfo-data

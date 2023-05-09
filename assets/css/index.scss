@@ -1,7 +1,43 @@
 ---
 ---
 
-@import "main";
+$backgroundColor: #293136;
+$ff-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, // San Francisco on macOS and iOS
+    "Segoe UI", // Windows
+    "Ubuntu", // Ubuntu
+    "Roboto", "Noto Sans", "Droid Sans", // Chrome OS and Android with fallbacks
+    sans-serif; // The final fallback for rendering in sans-serif.
+$ff-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+$ff-mono:
+    ui-monospace, // San Francisco Mono on macOS and iOS
+    "Cascadia Mono", "Segoe UI Mono", // Newer Windows monospace fonts that are optionally installed. Most likely to be rendered in Consolas
+    "Ubuntu Mono", // Ubuntu
+    "Roboto Mono", // Chrome OS and Android
+    Menlo, Monaco, Consolas, // A few sensible system font choices
+    monospace; // The final fallback for rendering in monospace.
+
+body {
+
+  background: $backgroundColor;
+  color: #000000;
+  font-family: $ff-sans;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+
+#container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 4em;
+}
+@media screen and (max-width: 1280px) {
+	#container {
+		width: 90%;
+	}
+}
 
 @import "components/brand";
 @import "components/navbar";
